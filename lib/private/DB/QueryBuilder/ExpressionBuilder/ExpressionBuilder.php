@@ -276,7 +276,7 @@ class ExpressionBuilder implements IExpressionBuilder {
 	public function like($x, $y, $type = null) {
 		$x = $this->helper->quoteColumnName($x);
 		$y = $this->helper->quoteColumnName($y);
-		return $this->expressionBuilder->like($x, $y);
+		return $this->expressionBuilder->like($x, $y, "'\'");
 	}
 
 	/**
