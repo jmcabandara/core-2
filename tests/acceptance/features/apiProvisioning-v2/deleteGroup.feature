@@ -7,6 +7,14 @@ So that I can remove unnecessary groups
 	Background:
 		Given using OCS API version "2"
 
+	@smokeTest
+	Scenario Outline: admin deletes a group
+		Given group "simple-group" has been created
+		When the administrator deletes group "simple-group" using the provisioning API
+		Then the OCS status code should be "200"
+		And the HTTP status code should be "200"
+		And group "simple-group" should not exist
+
 	Scenario Outline: admin deletes a group
 		Given group "<group_id>" has been created
 		When the administrator deletes group "<group_id>" using the provisioning API

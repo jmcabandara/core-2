@@ -7,6 +7,7 @@ Feature: sharing
 			|user0   |User Zero  |
 			|user1   |User One   |
 
+	@smokeTest
 	Scenario Outline: getting all shares of a user using that user
 		Given using OCS API version "<ocs_api_version>"
 		And user "user0" has moved file "/textfile0.txt" to "/file_to_share.txt"
@@ -20,6 +21,7 @@ Feature: sharing
 			|1              |100            |
 			|2              |200            |
 
+	@smokeTest
 	Scenario Outline: getting all shares of a user using another user
 		Given using OCS API version "<ocs_api_version>"
 		And user "user0" has shared file "textfile0.txt" with user "user1"
@@ -32,6 +34,7 @@ Feature: sharing
 			|1              |100            |
 			|2              |200            |
 
+	@smokeTest
 	Scenario Outline: getting all shares of a file
 		Given using OCS API version "<ocs_api_version>"
 		And user "user2" has been created
@@ -49,6 +52,7 @@ Feature: sharing
 			|1              |100            |
 			|2              |200            |
 
+	@smokeTest
 	Scenario Outline: getting all shares of a file with reshares
 		Given using OCS API version "<ocs_api_version>"
 		And user "user2" has been created
@@ -66,6 +70,7 @@ Feature: sharing
 			|1              |100            |
 			|2              |200            |
 
+	@smokeTest
 	Scenario Outline: User's own shares reshared to him don't appear when getting "shared with me" shares
 		Given using OCS API version "<ocs_api_version>"
 		And group "grp1" has been created
@@ -84,6 +89,7 @@ Feature: sharing
 			|1              |100            |
 			|2              |200            |
 
+	@smokeTest
 	Scenario Outline: getting share info of a share
 		Given using OCS API version "<ocs_api_version>"
 		And user "user0" has moved file "/textfile0.txt" to "/file_to_share.txt"
